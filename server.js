@@ -10,6 +10,12 @@ app.use(cors());
 
 const server = http.createServer(app);
 
+app.get("/", function (req, res) {
+  res.json({
+    mess: "xin chào",
+  });
+});
+
 const io = new Server(server, {
   cors: {
     origin: "*", // Cho phép mọi nguồn (bạn có thể thay '*' bằng địa chỉ cụ thể)
