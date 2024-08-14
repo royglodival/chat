@@ -22,7 +22,9 @@ io.on("connection", (socket) => {
 
   socket.on("message", (data) => {
     console.log("Received from client:", data);
-    socket.emit("message", data);
+
+    // Gửi tin nhắn tới tất cả các client
+    io.emit("message", data);
   });
 
   socket.on("disconnect", () => {
